@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: echo-python
+spec:
+  selector:
+    app: echo-python
+  ports:
+    - protocol: TCP
+      port: 9329
+      targetPort: 8080

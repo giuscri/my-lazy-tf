@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echo-python-deployment
+  labels:
+    app: echo-python
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: echo-python
+  template:
+    metadata:
+      labels:
+        app: echo-python 
+    spec:
+      containers:
+      - name: echo-python 
+        image: gcr.io/google-samples/echo-python:1.0 
+        ports:
+        - containerPort: 8080
